@@ -1,20 +1,25 @@
 FROM index.tenxcloud.com/docker_library/alpine:edge
 
-# Create app directory and bundle app source
+# Install node.js by apk
+RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories
+RUN apk update && apk upgrade
+RUN apk add --no-cache nodejs-lts@edge
+
+# If you have native dependencies, you'll need extra tools
+# RUN apk add --no-cache make gcc g++ python
+
+# Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
+
+# Install app dependencies
+COPY package.json /usr/src/app/
+RUN npm install
+
+# Bundle app source
 COPY . /usr/src/app
 
-# Install node.js and app dependencies
-RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
-  && apk update && apk upgrade \
-  && apk add --no-cache nodejs-lts@edge \
-  && npm install \
-  && npm uninstall -g npm \
-  && rm -rf /tmp/* \
-  && rm -rf /root/.npm/
-  
 # Expose port
 EXPOSE 8080
 
-CMD [ "node", "app.js" ]
+CMD [ "npm", "start" ]
