@@ -379,7 +379,7 @@ docker run -d --restart=always -p 8080:8080 --name docker_web_app_alpine zhangpc
 #### 参考资料
 * 《微服务、SOA 和 API：是敌是友？》http://www.ibm.com/developerworks/cn/websphere/library/techarticles/1601_clark-trs/1601_clark.html
 * 《解析微服务架构(一)：什么是微服务》https://www.ibm.com/developerworks/community/blogs/3302cc3b-074e-44da-90b1-5055f1dc0d9c/entry/%E8%A7%A3%E6%9E%90%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84_%E4%B8%80_%E4%BB%80%E4%B9%88%E6%98%AF%E5%BE%AE%E6%9C%8D%E5%8A%A1?lang=en
-* 《微服务选型之Modern Node.js》 http://gold.xitu.io/entry/579010917db2a20054c16fe7
+* 《微服务选型之Modern Node.js》 https://github.com/i5ting/modern-nodejs
 * 帅龙攻城狮《镜像构建优化之路》 http://blog.tenxcloud.com/?p=1313
 * 《微容器：更小的，更轻便的Docker容器》 http://blog.tenxcloud.com/?p=1302
 * 黄鑫攻城狮的内部分享《Dockerfile技巧分享》
