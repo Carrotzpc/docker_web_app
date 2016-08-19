@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
   let datenow = new Date()
   datenow = `${datenow.toLocaleDateString()} ${datenow.toLocaleTimeString()}`
   console.log(datenow, 'Hello world')
-  res.send('Hello world\n v2.0')
+  res.send('Hello world\n v2.2')
 })
 
 app.listen(PORT)
